@@ -1,0 +1,28 @@
+{
+  "name": "@json-schema-form/core",
+  "license": "MIT",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "prepack": "node scripts/build.js",
+    "lint": "eslint ./src"
+  },
+  "dependencies": {
+    "futil": "^1.71.5",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "mobx": "^6.7.0"
+  },
+  "devDependencies": {
+    "@flex-development/toggle-pkg-type": "^1.0.1",
+    "esbuild": "^0.17.3",
+    "eslint": "^8.32.0",
+    "glob": "^8.1.0",
+    "prettier": "^2.7.1",
+    "vitest": "^0.27.2"
+  }
+}
