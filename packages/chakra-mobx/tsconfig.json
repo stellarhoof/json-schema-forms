@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "jsx": "react-jsx",
+    "tsBuildInfoFile": "../../node_modules/.buildinfo/chakra-mobx"
+  },
+  "references": [
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../validator-ajv"
+    },
+    {
+      "path": "../react"
+    }
+  ]
+}

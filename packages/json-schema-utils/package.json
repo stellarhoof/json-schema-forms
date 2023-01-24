@@ -1,5 +1,5 @@
 {
-  "name": "@json-schema-form/core",
+  "name": "json-schema-utils",
   "license": "MIT",
   "version": "0.1.0",
   "repository": {
@@ -10,7 +10,7 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/types.d.ts"
     }
   },
   "files": [
@@ -21,11 +21,9 @@
   },
   "dependencies": {
     "@json-schema-form/tree-utils": "workspace:^",
-    "json-schema-utils": "workspace:^",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "expect-type": "^0.16.0",
     "mobx": "^6.7.0"
   }
 }

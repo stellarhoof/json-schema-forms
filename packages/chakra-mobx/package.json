@@ -1,0 +1,54 @@
+{
+  "name": "@json-schema-form/chakra-mobx",
+  "license": "MIT",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stellarhoof/json-schema-form.git"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "sb": "storybook dev -p 6006",
+    "prepack": "yarn run -T b"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.5.5",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@json-schema-form/core": "workspace:^",
+    "@json-schema-form/react": "workspace:^",
+    "framer-motion": "^10.9.1",
+    "lodash": "^4.17.21",
+    "mobx-react-lite": "^3.4.3",
+    "react-icons": "^4.8.0",
+    "safe-stable-stringify": "^2.4.3"
+  },
+  "peerDependencies": {
+    "mobx": "^6.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@json-schema-form/validator-ajv": "workspace:^",
+    "@storybook/addon-essentials": "^7.0.25",
+    "@storybook/addon-interactions": "^7.0.25",
+    "@storybook/addon-links": "^7.0.25",
+    "@storybook/blocks": "^7.0.25",
+    "@storybook/react-vite": "^7.0.25",
+    "@storybook/testing-library": "^0.2.0",
+    "mobx": "^6.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.25",
+    "vite": "^4.3.9"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "@json-schema-form/core",
+  "name": "@json-schema-form/validator-ajv",
   "license": "MIT",
   "version": "0.1.0",
   "repository": {
@@ -20,12 +20,9 @@
     "prepack": "yarn run -T b"
   },
   "dependencies": {
+    "@json-schema-form/core": "workspace:^",
     "@json-schema-form/tree-utils": "workspace:^",
-    "json-schema-utils": "workspace:^",
+    "ajv": "^8.12.0",
     "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "expect-type": "^0.16.0",
-    "mobx": "^6.7.0"
   }
 }

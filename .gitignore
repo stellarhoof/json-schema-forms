@@ -32,4 +32,8 @@ dist-ssr
 !.yarn/sdks
 !.yarn/versions
 
+# Typescript
+tsconfig.tsbuildinfo
+
+# Other
 repl.*

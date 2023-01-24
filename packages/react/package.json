@@ -2,37 +2,31 @@
   "name": "@json-schema-form/react",
   "license": "MIT",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stellarhoof/json-schema-form.git"
+  },
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "vite --open",
-    "predeploy": "vite build",
-    "lint": "eslint ./src",
-    "deploy": "gh-pages -d build"
+    "prepack": "yarn run -T b"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.3.7",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@json-schema-form/core": "workspace:packages/core",
-    "ajv": "^8.11.0",
-    "framer-motion": "^7.5.3",
-    "futil": "^1.71.5",
-    "lodash": "^4.17.21",
-    "mobx-react-lite": "^3.4.0",
-    "react-icons": "^4.6.0",
-    "safe-stable-stringify": "^2.4.0"
+    "@json-schema-form/core": "workspace:^"
   },
   "peerDependencies": {
-    "mobx": "^6.7.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.2.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^3.0.1",
-    "eslint": "^8.32.0",
-    "eslint-plugin-react": "^7.31.10",
-    "gh-pages": "^4.0.0",
-    "prettier": "^2.7.1",
-    "vite": "^4.0.4"
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0"
   }
 }

@@ -1,0 +1,1051 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`forEach > post childrenTree 1`] = `
+[
+  {
+    "context": {
+      "depth": 2,
+      "key": "film",
+      "parents": [
+        {
+          "children": {
+            "film": {
+              "title": "A New Hope",
+            },
+          },
+          "name": "Luke Skywalker",
+        },
+        {
+          "children": [
+            {
+              "children": {
+                "film": {
+                  "title": "A New Hope",
+                },
+              },
+              "name": "Luke Skywalker",
+            },
+          ],
+          "name": "Anakin Skywalker",
+        },
+      ],
+      "path": [
+        0,
+        "film",
+      ],
+    },
+    "node": {
+      "title": "A New Hope",
+    },
+  },
+  {
+    "context": {
+      "depth": 1,
+      "key": 0,
+      "parents": [
+        {
+          "children": [
+            {
+              "children": {
+                "film": {
+                  "title": "A New Hope",
+                },
+              },
+              "name": "Luke Skywalker",
+            },
+          ],
+          "name": "Anakin Skywalker",
+        },
+      ],
+      "path": [
+        0,
+      ],
+    },
+    "node": {
+      "children": {
+        "film": {
+          "title": "A New Hope",
+        },
+      },
+      "name": "Luke Skywalker",
+    },
+  },
+  {
+    "context": {
+      "depth": 0,
+    },
+    "node": {
+      "children": [
+        {
+          "children": {
+            "film": {
+              "title": "A New Hope",
+            },
+          },
+          "name": "Luke Skywalker",
+        },
+      ],
+      "name": "Anakin Skywalker",
+    },
+  },
+]
+`;
+
+exports[`forEach > post simpleTree 1`] = `
+[
+  {
+    "context": {
+      "depth": 1,
+      "key": "name",
+      "parents": [
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "name",
+      ],
+    },
+    "node": "The Empire Strikes Back",
+  },
+  {
+    "context": {
+      "depth": 2,
+      "key": 0,
+      "parents": [
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        0,
+      ],
+    },
+    "node": "Aldeeran",
+  },
+  {
+    "context": {
+      "depth": 3,
+      "key": "name",
+      "parents": [
+        {
+          "name": "Tatooine",
+        },
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        1,
+        "name",
+      ],
+    },
+    "node": "Tatooine",
+  },
+  {
+    "context": {
+      "depth": 2,
+      "key": 1,
+      "parents": [
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        1,
+      ],
+    },
+    "node": {
+      "name": "Tatooine",
+    },
+  },
+  {
+    "context": {
+      "depth": 1,
+      "key": "planets",
+      "parents": [
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+      ],
+    },
+    "node": [
+      "Aldeeran",
+      {
+        "name": "Tatooine",
+      },
+    ],
+  },
+  {
+    "context": {
+      "depth": 0,
+    },
+    "node": {
+      "name": "The Empire Strikes Back",
+      "planets": [
+        "Aldeeran",
+        {
+          "name": "Tatooine",
+        },
+      ],
+    },
+  },
+]
+`;
+
+exports[`forEach > pre childrenTree 1`] = `
+[
+  {
+    "context": {
+      "depth": 0,
+    },
+    "node": {
+      "children": [
+        {
+          "children": {
+            "film": {
+              "title": "A New Hope",
+            },
+          },
+          "name": "Luke Skywalker",
+        },
+      ],
+      "name": "Anakin Skywalker",
+    },
+  },
+  {
+    "context": {
+      "depth": 1,
+      "key": 0,
+      "parents": [
+        {
+          "children": [
+            {
+              "children": {
+                "film": {
+                  "title": "A New Hope",
+                },
+              },
+              "name": "Luke Skywalker",
+            },
+          ],
+          "name": "Anakin Skywalker",
+        },
+      ],
+      "path": [
+        0,
+      ],
+    },
+    "node": {
+      "children": {
+        "film": {
+          "title": "A New Hope",
+        },
+      },
+      "name": "Luke Skywalker",
+    },
+  },
+  {
+    "context": {
+      "depth": 2,
+      "key": "film",
+      "parents": [
+        {
+          "children": {
+            "film": {
+              "title": "A New Hope",
+            },
+          },
+          "name": "Luke Skywalker",
+        },
+        {
+          "children": [
+            {
+              "children": {
+                "film": {
+                  "title": "A New Hope",
+                },
+              },
+              "name": "Luke Skywalker",
+            },
+          ],
+          "name": "Anakin Skywalker",
+        },
+      ],
+      "path": [
+        0,
+        "film",
+      ],
+    },
+    "node": {
+      "title": "A New Hope",
+    },
+  },
+]
+`;
+
+exports[`forEach > pre simpleTree 1`] = `
+[
+  {
+    "context": {
+      "depth": 0,
+    },
+    "node": {
+      "name": "The Empire Strikes Back",
+      "planets": [
+        "Aldeeran",
+        {
+          "name": "Tatooine",
+        },
+      ],
+    },
+  },
+  {
+    "context": {
+      "depth": 1,
+      "key": "name",
+      "parents": [
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "name",
+      ],
+    },
+    "node": "The Empire Strikes Back",
+  },
+  {
+    "context": {
+      "depth": 1,
+      "key": "planets",
+      "parents": [
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+      ],
+    },
+    "node": [
+      "Aldeeran",
+      {
+        "name": "Tatooine",
+      },
+    ],
+  },
+  {
+    "context": {
+      "depth": 2,
+      "key": 0,
+      "parents": [
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        0,
+      ],
+    },
+    "node": "Aldeeran",
+  },
+  {
+    "context": {
+      "depth": 2,
+      "key": 1,
+      "parents": [
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        1,
+      ],
+    },
+    "node": {
+      "name": "Tatooine",
+    },
+  },
+  {
+    "context": {
+      "depth": 3,
+      "key": "name",
+      "parents": [
+        {
+          "name": "Tatooine",
+        },
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        1,
+        "name",
+      ],
+    },
+    "node": "Tatooine",
+  },
+]
+`;
+
+exports[`map > post childrenTree 1`] = `
+{
+  "children": [
+    {
+      "children": {
+        "film": {
+          "key": "added[object]",
+          "title": "A New Hope",
+        },
+      },
+      "key": "added[object]",
+      "name": "Luke Skywalker",
+    },
+  ],
+  "key": "added[object]",
+  "name": "Anakin Skywalker",
+}
+`;
+
+exports[`map > post simpleTree 1`] = `
+{
+  "name": "The Empire Strikes Back added[string]",
+  "planets": [
+    "Aldeeran added[string]",
+    {
+      "name": "Tatooine added[string]",
+    },
+  ],
+}
+`;
+
+exports[`map > pre childrenTree 1`] = `
+{
+  "children": [
+    {
+      "children": {
+        "film": {
+          "key": "added[object]",
+          "title": "A New Hope",
+        },
+      },
+      "key": "added[object]",
+      "name": "Luke Skywalker",
+    },
+  ],
+  "key": "added[object]",
+  "name": "Anakin Skywalker",
+}
+`;
+
+exports[`map > pre simpleTree 1`] = `
+{
+  "name": "The Empire Strikes Back added[string]",
+  "planets": [
+    "Aldeeran added[string]",
+    {
+      "name": "Tatooine added[string]",
+    },
+  ],
+}
+`;
+
+exports[`reduce > post childrenTree 1`] = `
+[
+  {
+    "ctx": {
+      "depth": 2,
+      "key": "film",
+      "parents": [
+        {
+          "children": {
+            "film": {
+              "title": "A New Hope",
+            },
+          },
+          "name": "Luke Skywalker",
+        },
+        {
+          "children": [
+            {
+              "children": {
+                "film": {
+                  "title": "A New Hope",
+                },
+              },
+              "name": "Luke Skywalker",
+            },
+          ],
+          "name": "Anakin Skywalker",
+        },
+      ],
+      "path": [
+        0,
+        "film",
+      ],
+    },
+    "node": {
+      "title": "A New Hope",
+    },
+  },
+  {
+    "ctx": {
+      "depth": 1,
+      "key": 0,
+      "parents": [
+        {
+          "children": [
+            {
+              "children": {
+                "film": {
+                  "title": "A New Hope",
+                },
+              },
+              "name": "Luke Skywalker",
+            },
+          ],
+          "name": "Anakin Skywalker",
+        },
+      ],
+      "path": [
+        0,
+      ],
+    },
+    "node": {
+      "children": {
+        "film": {
+          "title": "A New Hope",
+        },
+      },
+      "name": "Luke Skywalker",
+    },
+  },
+  {
+    "ctx": {
+      "depth": 0,
+    },
+    "node": {
+      "children": [
+        {
+          "children": {
+            "film": {
+              "title": "A New Hope",
+            },
+          },
+          "name": "Luke Skywalker",
+        },
+      ],
+      "name": "Anakin Skywalker",
+    },
+  },
+]
+`;
+
+exports[`reduce > post simpleTree 1`] = `
+[
+  {
+    "ctx": {
+      "depth": 1,
+      "key": "name",
+      "parents": [
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "name",
+      ],
+    },
+    "node": "The Empire Strikes Back",
+  },
+  {
+    "ctx": {
+      "depth": 2,
+      "key": 0,
+      "parents": [
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        0,
+      ],
+    },
+    "node": "Aldeeran",
+  },
+  {
+    "ctx": {
+      "depth": 3,
+      "key": "name",
+      "parents": [
+        {
+          "name": "Tatooine",
+        },
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        1,
+        "name",
+      ],
+    },
+    "node": "Tatooine",
+  },
+  {
+    "ctx": {
+      "depth": 2,
+      "key": 1,
+      "parents": [
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        1,
+      ],
+    },
+    "node": {
+      "name": "Tatooine",
+    },
+  },
+  {
+    "ctx": {
+      "depth": 1,
+      "key": "planets",
+      "parents": [
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+      ],
+    },
+    "node": [
+      "Aldeeran",
+      {
+        "name": "Tatooine",
+      },
+    ],
+  },
+  {
+    "ctx": {
+      "depth": 0,
+    },
+    "node": {
+      "name": "The Empire Strikes Back",
+      "planets": [
+        "Aldeeran",
+        {
+          "name": "Tatooine",
+        },
+      ],
+    },
+  },
+]
+`;
+
+exports[`reduce > pre childrenTree 1`] = `
+[
+  {
+    "ctx": {
+      "depth": 0,
+    },
+    "node": {
+      "children": [
+        {
+          "children": {
+            "film": {
+              "title": "A New Hope",
+            },
+          },
+          "name": "Luke Skywalker",
+        },
+      ],
+      "name": "Anakin Skywalker",
+    },
+  },
+  {
+    "ctx": {
+      "depth": 1,
+      "key": 0,
+      "parents": [
+        {
+          "children": [
+            {
+              "children": {
+                "film": {
+                  "title": "A New Hope",
+                },
+              },
+              "name": "Luke Skywalker",
+            },
+          ],
+          "name": "Anakin Skywalker",
+        },
+      ],
+      "path": [
+        0,
+      ],
+    },
+    "node": {
+      "children": {
+        "film": {
+          "title": "A New Hope",
+        },
+      },
+      "name": "Luke Skywalker",
+    },
+  },
+  {
+    "ctx": {
+      "depth": 2,
+      "key": "film",
+      "parents": [
+        {
+          "children": {
+            "film": {
+              "title": "A New Hope",
+            },
+          },
+          "name": "Luke Skywalker",
+        },
+        {
+          "children": [
+            {
+              "children": {
+                "film": {
+                  "title": "A New Hope",
+                },
+              },
+              "name": "Luke Skywalker",
+            },
+          ],
+          "name": "Anakin Skywalker",
+        },
+      ],
+      "path": [
+        0,
+        "film",
+      ],
+    },
+    "node": {
+      "title": "A New Hope",
+    },
+  },
+]
+`;
+
+exports[`reduce > pre simpleTree 1`] = `
+[
+  {
+    "ctx": {
+      "depth": 0,
+    },
+    "node": {
+      "name": "The Empire Strikes Back",
+      "planets": [
+        "Aldeeran",
+        {
+          "name": "Tatooine",
+        },
+      ],
+    },
+  },
+  {
+    "ctx": {
+      "depth": 1,
+      "key": "name",
+      "parents": [
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "name",
+      ],
+    },
+    "node": "The Empire Strikes Back",
+  },
+  {
+    "ctx": {
+      "depth": 1,
+      "key": "planets",
+      "parents": [
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+      ],
+    },
+    "node": [
+      "Aldeeran",
+      {
+        "name": "Tatooine",
+      },
+    ],
+  },
+  {
+    "ctx": {
+      "depth": 2,
+      "key": 0,
+      "parents": [
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        0,
+      ],
+    },
+    "node": "Aldeeran",
+  },
+  {
+    "ctx": {
+      "depth": 2,
+      "key": 1,
+      "parents": [
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        1,
+      ],
+    },
+    "node": {
+      "name": "Tatooine",
+    },
+  },
+  {
+    "ctx": {
+      "depth": 3,
+      "key": "name",
+      "parents": [
+        {
+          "name": "Tatooine",
+        },
+        [
+          "Aldeeran",
+          {
+            "name": "Tatooine",
+          },
+        ],
+        {
+          "name": "The Empire Strikes Back",
+          "planets": [
+            "Aldeeran",
+            {
+              "name": "Tatooine",
+            },
+          ],
+        },
+      ],
+      "path": [
+        "planets",
+        1,
+        "name",
+      ],
+    },
+    "node": "Tatooine",
+  },
+]
+`;

@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "lib": ["esnext", "dom"],
+    "tsBuildInfoFile": "../../node_modules/.buildinfo/json-schema-utils"
+  },
+  "references": [
+    {
+      "path": "../tree-utils"
+    }
+  ]
+}
