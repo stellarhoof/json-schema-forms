@@ -1,7 +1,7 @@
 import { ForwardedRef, forwardRef } from "react"
 import { observer } from "mobx-react-lite"
 import { TextareaProps, Textarea } from "@chakra-ui/react"
-import { ReactField } from "@json-schema-form/react"
+import { ReactField } from "@json-schema-forms/react"
 
 type Props<P extends object> = { field: ReactField<P> } & TextareaProps
 

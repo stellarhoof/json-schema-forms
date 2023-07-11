@@ -84,7 +84,7 @@ function* bar(config) {
     for (const source of getIncludedSourceFiles(program)) {
       if (
         source.fileName ===
-        "/Users/ah/Code/stellarhoof/json-schema-form/packages/core/src/createForm.ts"
+        "/Users/ah/Code/stellarhoof/json-schema-forms/packages/core/src/createForm.ts"
       ) {
         console.log("before")
         yield {
@@ -110,7 +110,7 @@ function* bar(config) {
 // Caveat: The project needs to have been built before this works
 const run = async (root) => {
   const config = ts.getParsedCommandLineOfConfigFile(
-    "/Users/ah/Code/stellarhoof/json-schema-form/tsconfig.json",
+    "/Users/ah/Code/stellarhoof/json-schema-forms/tsconfig.json",
     undefined,
     {
       fileExists: ts.sys.fileExists,

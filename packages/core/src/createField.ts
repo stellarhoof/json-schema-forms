@@ -1,7 +1,7 @@
 import _ from "lodash/fp.js"
 import { get, set } from "lodash"
 import { Required } from "utility-types"
-import { Collection, Tree } from "@json-schema-form/tree-utils"
+import { Collection, Tree } from "@json-schema-forms/tree-utils"
 import {
   JsonSchema,
   getSchemaValue,

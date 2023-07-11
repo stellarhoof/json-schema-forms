@@ -1,10 +1,10 @@
 {
-  "name": "@json-schema-form/tree-utils",
+  "name": "@json-schema-forms/tree-utils",
   "license": "MIT",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stellarhoof/json-schema-form.git"
+    "url": "git+https://github.com/stellarhoof/json-schema-forms.git"
   },
   "type": "module",
   "exports": {

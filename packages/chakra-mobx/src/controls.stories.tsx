@@ -1,11 +1,11 @@
 import { observable } from "mobx"
 import { Meta, StoryObj } from "@storybook/react"
-import { createForm } from "@json-schema-form/core"
+import { createForm } from "@json-schema-forms/core"
 import controls from "./controls.js"
 
 /**
  * ```javascript
- * import { controls } from '@json-schema-form/chakra-mobx'
+ * import { controls } from '@json-schema-forms/chakra-mobx'
  * ```
  */
 const meta: Meta = {

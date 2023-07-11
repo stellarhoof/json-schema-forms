@@ -3,9 +3,9 @@ import { useState } from "react"
 import { observable, reaction } from "mobx"
 import { Center, chakra } from "@chakra-ui/react"
 import { ErrorObject } from "ajv"
-import { validate } from "@json-schema-form/validator-ajv"
-import { FormSchema, createForm } from "@json-schema-form/core"
-import { useForm, Field, ReactFieldProps } from "@json-schema-form/react"
+import { validate } from "@json-schema-forms/validator-ajv"
+import { FormSchema, createForm } from "@json-schema-forms/core"
+import { useForm, Field, ReactFieldProps } from "@json-schema-forms/react"
 import Submit from "./Submit.js"
 
 const meta = {

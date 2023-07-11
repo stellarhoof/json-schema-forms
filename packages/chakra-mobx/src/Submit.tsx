@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite"
 import { Button, ButtonProps } from "@chakra-ui/react"
-import { ReactField } from "@json-schema-form/react"
+import { ReactField } from "@json-schema-forms/react"
 
 type Props<P extends object> = { field: ReactField<P> } & ButtonProps
 

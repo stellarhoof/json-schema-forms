@@ -10,7 +10,7 @@ const components = {
       },
     },
   },
-  "@json-schema-form/layouts/Form": {
+  "@json-schema-forms/layouts/Form": {
     parts: ["container", "label", "description", "control", "errors"],
     baseStyle: {
       label: {
@@ -30,7 +30,7 @@ const components = {
       },
     },
   },
-  "@json-schema-form/layouts/Fieldset": {
+  "@json-schema-forms/layouts/Fieldset": {
     parts: [
       "container",
       "label",
@@ -74,7 +74,7 @@ const components = {
       },
     },
   },
-  "@json-schema-form/layouts/Default": {
+  "@json-schema-forms/layouts/Default": {
     parts: [
       "container",
       "label",
@@ -96,7 +96,7 @@ const components = {
       },
     },
   },
-  "@json-schema-form/layouts/Checkbox": {
+  "@json-schema-forms/layouts/Checkbox": {
     parts: ["container", "label", "description", "control", "errors"],
     baseStyle: {
       label: {

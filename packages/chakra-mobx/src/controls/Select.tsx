@@ -1,6 +1,6 @@
 import { ForwardedRef, forwardRef } from "react"
 import { observer } from "mobx-react-lite"
-import { ReactField } from "@json-schema-form/react"
+import { ReactField } from "@json-schema-forms/react"
 import {
   OptionsSelect,
   Props as OptionsSelectProps,

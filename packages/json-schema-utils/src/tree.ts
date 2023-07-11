@@ -3,7 +3,7 @@ import {
   Tree,
   Collection,
   TraversalContext,
-} from "@json-schema-form/tree-utils"
+} from "@json-schema-forms/tree-utils"
 
 export type TraversableSchema = {
   type: string

@@ -62,8 +62,8 @@ In practice a form schema will be different from a collection schema:
 ```jsx
 import * as React from 'react'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import { FormComponentsProvider } from '@json-schema-form/react'
-import { theme, layouts, controls } from '@json-schema-form/chakra-mobx'
+import { FormComponentsProvider } from '@json-schema-forms/react'
+import { theme, layouts, controls } from '@json-schema-forms/chakra-mobx'
 
 function App() {
   return (
@@ -78,6 +78,7 @@ function App() {
 
 # TODO
 
+- Check out https://json-schema-forms.vercel.app/
 - Convert string to type in RadioGroup
 - Convert string to type in Select
 - Make a util to extract a subschema based off fields to omit/pick

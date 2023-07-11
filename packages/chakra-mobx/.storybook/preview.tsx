@@ -4,7 +4,7 @@ import parser from "prettier/parser-typescript.js"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { Preview } from "@storybook/react"
 import { Title, Subtitle, Description, Stories } from "@storybook/blocks"
-import { FormComponentsProvider } from "@json-schema-form/react"
+import { FormComponentsProvider } from "@json-schema-forms/react"
 import { theme, controls, layouts } from "../src/index.js"
 
 const preview: Preview = {

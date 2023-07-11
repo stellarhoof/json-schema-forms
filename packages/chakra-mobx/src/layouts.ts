@@ -1,4 +1,4 @@
-import { FormComponentsContextType } from "@json-schema-form/react"
+import { FormComponentsContextType } from "@json-schema-forms/react"
 import NotFound from "./NotFound.js"
 import Default from "./layouts/Default.js"
 import Form from "./layouts/Form.js"

@@ -8,8 +8,8 @@ import {
   NumberIncrementStepper,
   NumberDecrementStepper,
 } from "@chakra-ui/react"
-import { Field } from "@json-schema-form/core"
-import { ReactField } from "@json-schema-form/react"
+import { Field } from "@json-schema-forms/core"
+import { ReactField } from "@json-schema-forms/react"
 
 export const useNumberSchema = (schema: Field["schema"]) => {
   if (schema.type !== "number" && schema.type !== "integer") {

@@ -19,5 +19,5 @@ cd packages/tree-utils && yarn run -T vitest
 # From any directory, specifying workspace
 # > yarn workspace {workspace} run -T {cmd}
 # Ex:
-yarn workspace @json-schema-form/tree-utils run -T vitest .
+yarn workspace @json-schema-forms/tree-utils run -T vitest .
 ```

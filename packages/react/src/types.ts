@@ -1,5 +1,5 @@
 import { ReactNode, ForwardedRef } from "react"
-import { Field } from "@json-schema-form/core"
+import { Field } from "@json-schema-forms/core"
 
 export type ReactField<P extends object> = Field<ReactFieldProps<P> & P>
 

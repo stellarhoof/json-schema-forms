@@ -2,7 +2,7 @@ import {
   Tree,
   Collection,
   TraversalContext,
-} from "@json-schema-form/tree-utils"
+} from "@json-schema-forms/tree-utils"
 import { Field } from "./createField.js"
 
 export const formTree = new Tree<{ children?: Collection<unknown> }>({

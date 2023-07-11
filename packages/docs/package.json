@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stellarhoof/json-schema-form.git"
+    "url": "git+https://github.com/stellarhoof/json-schema-forms.git"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.5.0",

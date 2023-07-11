@@ -1,10 +1,10 @@
 {
-  "name": "@json-schema-form/chakra-mobx",
+  "name": "@json-schema-forms/chakra-mobx",
   "license": "MIT",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stellarhoof/json-schema-form.git"
+    "url": "git+https://github.com/stellarhoof/json-schema-forms.git"
   },
   "type": "module",
   "exports": {
@@ -24,8 +24,8 @@
     "@chakra-ui/react": "^2.5.5",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@json-schema-form/core": "workspace:^",
-    "@json-schema-form/react": "workspace:^",
+    "@json-schema-forms/core": "workspace:^",
+    "@json-schema-forms/react": "workspace:^",
     "framer-motion": "^10.9.1",
     "lodash": "^4.17.21",
     "mobx-react-lite": "^3.4.3",
@@ -38,7 +38,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@json-schema-form/validator-ajv": "workspace:^",
+    "@json-schema-forms/validator-ajv": "workspace:^",
     "@storybook/addon-essentials": "^7.0.25",
     "@storybook/addon-interactions": "^7.0.25",
     "@storybook/addon-links": "^7.0.25",

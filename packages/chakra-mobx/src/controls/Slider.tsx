@@ -7,7 +7,7 @@ import {
   SliderThumb,
   SliderProps,
 } from "@chakra-ui/react"
-import { ReactField } from "@json-schema-form/react"
+import { ReactField } from "@json-schema-forms/react"
 import { useNumberSchema } from "./NumberInput.js"
 
 type Props<P extends object> = { field: ReactField<P> } & SliderProps

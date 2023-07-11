@@ -1,6 +1,6 @@
 import { ForwardedRef, forwardRef } from "react"
 import { FormControlProps, useMultiStyleConfig } from "@chakra-ui/react"
-import { Control, ReactField } from "@json-schema-form/react"
+import { Control, ReactField } from "@json-schema-forms/react"
 import FormControl from "./shared/FormControl.js"
 import Title from "./shared/Title.js"
 import Description from "./shared/Description.js"
@@ -10,7 +10,7 @@ type Props<P extends object> = { field: ReactField<P> } & FormControlProps
 
 export default forwardRef(
   <P extends object>({ field, ...props }: Props<P>, ref: ForwardedRef<any>) => {
-    const css = useMultiStyleConfig("@json-schema-form/layouts/Form", props)
+    const css = useMultiStyleConfig("@json-schema-forms/layouts/Form", props)
     return (
       <FormControl as="fieldset" field={field} sx={css.container} {...props}>
         <Title field={field} sx={css.label} />

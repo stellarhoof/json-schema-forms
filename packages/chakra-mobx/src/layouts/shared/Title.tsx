@@ -1,5 +1,5 @@
 import { chakra, FormLabel, FormLabelProps } from "@chakra-ui/react"
-import { ReactField } from "@json-schema-form/react"
+import { ReactField } from "@json-schema-forms/react"
 import { observer } from "mobx-react-lite"
 
 type Props<P extends object> = { field: ReactField<P> } & FormLabelProps

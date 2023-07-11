@@ -4,7 +4,7 @@ import {
   OptionsRadioGroup,
   Props as OptionsRadioGroupProps,
 } from "./shared/OptionsRadioGroup.js"
-import { ReactField } from "@json-schema-form/react"
+import { ReactField } from "@json-schema-forms/react"
 
 type Props<P extends object> = { field: ReactField<P> } & OptionsRadioGroupProps
 

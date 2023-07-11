@@ -1,4 +1,4 @@
-import { FormComponentsContextType } from "@json-schema-form/react"
+import { FormComponentsContextType } from "@json-schema-forms/react"
 import Checkbox from "./controls/Checkbox.js"
 import ChildrenGrid from "./controls/ChildrenGrid.js"
 import Input from "./controls/Input.js"

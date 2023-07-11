@@ -1,10 +1,10 @@
 {
-  "name": "@json-schema-form/react",
+  "name": "@json-schema-forms/react",
   "license": "MIT",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stellarhoof/json-schema-form.git"
+    "url": "git+https://github.com/stellarhoof/json-schema-forms.git"
   },
   "type": "module",
   "exports": {
@@ -20,7 +20,7 @@
     "prepack": "yarn run -T build"
   },
   "dependencies": {
-    "@json-schema-form/core": "workspace:^"
+    "@json-schema-forms/core": "workspace:^"
   },
   "peerDependencies": {
     "react": "^18.2.0"

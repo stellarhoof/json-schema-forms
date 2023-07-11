@@ -4290,16 +4290,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@json-schema-form/chakra-mobx@workspace:packages/chakra-mobx":
+"@json-schema-forms/chakra-mobx@workspace:packages/chakra-mobx":
   version: 0.0.0-use.local
-  resolution: "@json-schema-form/chakra-mobx@workspace:packages/chakra-mobx"
+  resolution: "@json-schema-forms/chakra-mobx@workspace:packages/chakra-mobx"
   dependencies:
     "@chakra-ui/react": ^2.5.5
     "@emotion/react": ^11.10.6
     "@emotion/styled": ^11.10.6
-    "@json-schema-form/core": "workspace:^"
-    "@json-schema-form/react": "workspace:^"
-    "@json-schema-form/validator-ajv": "workspace:^"
+    "@json-schema-forms/core": "workspace:^"
+    "@json-schema-forms/react": "workspace:^"
+    "@json-schema-forms/validator-ajv": "workspace:^"
     "@storybook/addon-essentials": ^7.0.25
     "@storybook/addon-interactions": ^7.0.25
     "@storybook/addon-links": ^7.0.25
@@ -4323,11 +4323,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@json-schema-form/core@workspace:^, @json-schema-form/core@workspace:packages/core":
+"@json-schema-forms/core@workspace:^, @json-schema-forms/core@workspace:packages/core":
   version: 0.0.0-use.local
-  resolution: "@json-schema-form/core@workspace:packages/core"
+  resolution: "@json-schema-forms/core@workspace:packages/core"
   dependencies:
-    "@json-schema-form/tree-utils": "workspace:^"
+    "@json-schema-forms/tree-utils": "workspace:^"
     expect-type: ^0.16.0
     json-schema-utils: "workspace:^"
     lodash: ^4.17.21
@@ -4335,11 +4335,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@json-schema-form/react@workspace:^, @json-schema-form/react@workspace:packages/react":
+"@json-schema-forms/react@workspace:^, @json-schema-forms/react@workspace:packages/react":
   version: 0.0.0-use.local
-  resolution: "@json-schema-form/react@workspace:packages/react"
+  resolution: "@json-schema-forms/react@workspace:packages/react"
   dependencies:
-    "@json-schema-form/core": "workspace:^"
+    "@json-schema-forms/core": "workspace:^"
     "@types/react": ^18.2.0
     react: ^18.2.0
   peerDependencies:
@@ -4347,18 +4347,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@json-schema-form/tree-utils@workspace:^, @json-schema-form/tree-utils@workspace:packages/tree-utils":
+"@json-schema-forms/tree-utils@workspace:^, @json-schema-forms/tree-utils@workspace:packages/tree-utils":
   version: 0.0.0-use.local
-  resolution: "@json-schema-form/tree-utils@workspace:packages/tree-utils"
+  resolution: "@json-schema-forms/tree-utils@workspace:packages/tree-utils"
   languageName: unknown
   linkType: soft
 
-"@json-schema-form/validator-ajv@workspace:^, @json-schema-form/validator-ajv@workspace:packages/validator-ajv":
+"@json-schema-forms/validator-ajv@workspace:^, @json-schema-forms/validator-ajv@workspace:packages/validator-ajv":
   version: 0.0.0-use.local
-  resolution: "@json-schema-form/validator-ajv@workspace:packages/validator-ajv"
+  resolution: "@json-schema-forms/validator-ajv@workspace:packages/validator-ajv"
   dependencies:
-    "@json-schema-form/core": "workspace:^"
-    "@json-schema-form/tree-utils": "workspace:^"
+    "@json-schema-forms/core": "workspace:^"
+    "@json-schema-forms/tree-utils": "workspace:^"
     ajv: ^8.12.0
     lodash: ^4.17.21
   languageName: unknown
@@ -12115,9 +12115,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-schema-form@workspace:.":
+"json-schema-forms@workspace:.":
   version: 0.0.0-use.local
-  resolution: "json-schema-form@workspace:."
+  resolution: "json-schema-forms@workspace:."
   dependencies:
     "@changesets/cli": ^2.26.2
     "@types/lodash": ^4.14.191
@@ -12160,7 +12160,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "json-schema-utils@workspace:packages/json-schema-utils"
   dependencies:
-    "@json-schema-form/tree-utils": "workspace:^"
+    "@json-schema-forms/tree-utils": "workspace:^"
     lodash: ^4.17.21
     mobx: ^6.7.0
   languageName: unknown

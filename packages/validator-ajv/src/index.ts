@@ -1,7 +1,7 @@
 import _ from "lodash/fp.js"
 import ajvModule, { ErrorObject } from "ajv"
-import { Tree } from "@json-schema-form/tree-utils"
-import { Field, formTree } from "@json-schema-form/core"
+import { Tree } from "@json-schema-forms/tree-utils"
+import { Field, formTree } from "@json-schema-forms/core"
 
 const Ajv = ajvModule.default
 

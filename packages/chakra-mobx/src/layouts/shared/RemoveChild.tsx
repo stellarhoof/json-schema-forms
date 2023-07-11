@@ -2,7 +2,7 @@ import { Omit } from "utility-types"
 import { observer } from "mobx-react-lite"
 import { Icon, Button, ButtonProps } from "@chakra-ui/react"
 import { MdDelete } from "react-icons/md/index.js"
-import { ReactField } from "@json-schema-form/react"
+import { ReactField } from "@json-schema-forms/react"
 
 export default observer(
   <P extends object>({
