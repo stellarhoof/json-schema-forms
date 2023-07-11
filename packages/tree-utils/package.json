@@ -17,6 +17,6 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "yarn run -T b"
+    "prepack": "yarn run -T build"
   }
 }

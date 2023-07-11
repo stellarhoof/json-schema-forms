@@ -17,7 +17,7 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "yarn run -T b"
+    "prepack": "yarn run -T build"
   },
   "dependencies": {
     "@json-schema-form/core": "workspace:^"

@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "sb": "storybook dev -p 6006",
-    "prepack": "yarn run -T b"
+    "prepack": "yarn run -T build"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
