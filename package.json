@@ -12,10 +12,9 @@
     "build": "tsc -b",
     "build:watch": "tsc-watch -b --noClear",
     "version": "yarn changeset version && yarn install --mode=update-lockfile",
-    "publish": "yarn workspaces foreach --parallel --no-private exec npm publish --tolerate-republish",
+    "publish": "yarn workspaces foreach --parallel --no-private npm publish --access=public --tolerate-republish",
     "publish:yalc": "yarn workspaces foreach --parallel --no-private exec yalc publish --push --changed --no-workspace-resolve",
-    "publish:yalc:watch": "yarn build:watch --onCompilationComplete 'yarn publish:yalc'",
-    "deploy": "gh-pages -d build"
+    "publish:yalc:watch": "yarn build:watch --onCompilationComplete 'yarn publish:yalc'"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
