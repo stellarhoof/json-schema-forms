@@ -20,8 +20,8 @@
     "prepack": "yarn run -T build"
   },
   "dependencies": {
+    "@json-schema-forms/json-schema-utils": "workspace:^",
     "@json-schema-forms/tree-utils": "workspace:^",
-    "json-schema-utils": "workspace:^",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

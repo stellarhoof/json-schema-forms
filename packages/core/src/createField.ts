@@ -6,7 +6,7 @@ import {
   JsonSchema,
   getSchemaValue,
   getChildrenSchemasFromValue,
-} from "json-schema-utils"
+} from "@json-schema-forms/json-schema-utils"
 import { formTree } from "./util.js"
 import { FieldId, FormConfig } from "./createForm.js"
 

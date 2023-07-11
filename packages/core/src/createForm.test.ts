@@ -1,7 +1,10 @@
 // @vitest-environment jsdom
 
 import { describe, it, expect } from "vitest"
-import { JsonSchema, jsonSchemaTree } from "json-schema-utils"
+import {
+  JsonSchema,
+  jsonSchemaTree,
+} from "@json-schema-forms/json-schema-utils"
 import { FormConfig, FormSchema, createForm } from "./createForm.js"
 
 describe("createForm()", () => {

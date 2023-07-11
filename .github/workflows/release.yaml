@@ -5,11 +5,15 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+  pull-requests: write
+
+# https://github.com/changesets/action#with-publishing
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   release-or-create-pr:
-    # Only one publish job should run at a time
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#concurrency
-    concurrency: publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -24,16 +28,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
-      - name: Setup npm auth token
-        run: |
-          echo -e "npmRegistryServer: \"https://registry.npmjs.org/\"\nnpmAuthToken: \"$NPM_TOKEN\"" >> ./.yarnrc.yml
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Release or Create Release PR
         uses: changesets/action@v1
         with:
           version: yarn version
           publish: yarn publish
         env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

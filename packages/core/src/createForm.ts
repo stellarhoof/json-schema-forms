@@ -1,5 +1,9 @@
 import _ from "lodash/fp.js"
-import { JsonSchema, getSchemaValue, jsonSchemaTree } from "json-schema-utils"
+import {
+  JsonSchema,
+  getSchemaValue,
+  jsonSchemaTree,
+} from "@json-schema-forms/json-schema-utils"
 import { Field, FormContext, createField } from "./createField.js"
 import { accumulate } from "./util.js"
 
