@@ -1,5 +1,6 @@
 import _ from "lodash/fp.js"
-import { get, set } from "lodash"
+import get from "lodash/get.js"
+import set from "lodash/set.js"
 import { Required } from "utility-types"
 import { Collection, Tree } from "@json-schema-forms/tree-utils"
 import {
