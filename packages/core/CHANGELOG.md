@@ -1,5 +1,11 @@
 # @json-schema-forms/core
 
+## 0.1.2
+
+### Patch Changes
+
+- 7794d63: Fix get/set lodash imports
+
 ## 0.1.1
 
 ### Patch Changes
