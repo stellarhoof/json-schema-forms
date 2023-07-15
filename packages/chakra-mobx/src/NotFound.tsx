@@ -14,7 +14,7 @@ export default forwardRef(
     <Alert ref={ref} status="error" {...props}>
       <AlertIcon />
       <AlertDescription>
-        No component found for field at path "{field.path}"
+        No component found for field at path "{field.name}"
       </AlertDescription>
     </Alert>
   )

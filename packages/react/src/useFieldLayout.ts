@@ -13,7 +13,7 @@ export default <P extends object>(field: ReactField<P>) => {
     layouts["NotFound"]
   if (!Component) {
     throw new Error(
-      `No layout component found for field at path "${field.path}"`
+      `No layout component found for field at path "${field.name}"`
     )
   }
   return Component

@@ -13,7 +13,7 @@ export default <P extends object>(field: ReactField<P>) => {
     controls["NotFound"]
   if (!Component) {
     throw new Error(
-      `No control component found for field at path "${field.path}"`
+      `No control component found for field at path "${field.name}"`
     )
   }
   return Component

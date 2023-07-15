@@ -35,7 +35,7 @@ describe("createForm()", () => {
       )
 
       const config: FormConfig<P> = {
-        value: { colors: ["red"] },
+        defaultValue: { colors: ["red"] },
         onCreateField: (field) => {
           field.setBy = "onCreateField(config)"
         },
@@ -58,13 +58,13 @@ describe("createForm()", () => {
         (schema) => ({
           ...schema,
           onCreateField: (field) => () => {
-            paths.push(field.path.join("."))
+            paths.push(field.name)
           },
         }),
         jsonSchema
       )
 
-      createForm(formSchema, { value: { colors: ["red"] } }).cleanup()
+      createForm(formSchema, { defaultValue: { colors: ["red"] } }).dispose()
       expect(paths).toEqual(["colors.0", "colors", ""])
     })
   })

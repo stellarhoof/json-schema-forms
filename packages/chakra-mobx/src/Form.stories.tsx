@@ -68,13 +68,13 @@ const schema: FormSchema<ReactFieldProps> = {
   },
 }
 
-const value = {
+const defaultValue = {
   scalarArray: ["Pocahontas", "Snow White"],
   arr: [{ job: "Mercenary", age: 22, isMarried: true }],
 }
 
 const form = createForm(schema, {
-  value,
+  defaultValue,
   createStore: observable,
   onCreateField(field) {
     field.controlProps ??= {}

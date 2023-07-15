@@ -11,7 +11,7 @@ export default observer(
       field.children ? (
         <Grid ref={ref} {...props}>
           {Object.values(field.children).map((field) => (
-            <Field key={field.path.join(".")} field={field} />
+            <Field key={field.name} field={field} />
           ))}
         </Grid>
       ) : null

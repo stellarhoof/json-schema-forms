@@ -4,11 +4,11 @@ import {
   getSchemaValue,
   jsonSchemaTree,
 } from "@json-schema-forms/json-schema-utils"
-import { Field, FormContext, createField } from "./createField.js"
+import { Field, Context, createField } from "./createField.js"
 import { accumulate } from "./util.js"
 
 export interface FormConfig<P extends object = object> {
-  value?: any
+  defaultValue?: any
   createStore?: <T>(value: T) => T
   onCreateField?: (field: Field<P>) => (() => void) | void
 }
@@ -38,20 +38,21 @@ export const createForm = <P extends object = object>(
 
   const createStore = config.createStore ?? _.identity
 
-  const normalized = getSchemaValue(jsonSchema, config.value)
+  const defaultValue = getSchemaValue(jsonSchema, config.defaultValue)
 
-  const value = createStore({
-    initial: _.cloneDeep(normalized),
-    current: normalized,
+  const store = createStore({
+    value: _.cloneDeep(defaultValue),
+    defaultValue,
   })
 
-  const formContext: FormContext<P> = {
-    value,
+  const context: Context<P> = {
+    store,
     createStore,
     fieldMap: new Map<FieldId, Field<P>>(),
     onCreateField(field) {
-      const path = field.path
-        .map((k) => (Number.isInteger(k) ? "*" : k))
+      const path = field.name
+        .split(".")
+        .map((k) => (isNaN(parseInt(k)) ? k : "*"))
         .join(".")
       const disposers = [
         config.onCreateField?.(field),
@@ -65,11 +66,5 @@ export const createForm = <P extends object = object>(
     },
   }
 
-  const field = createField({
-    id: Symbol(),
-    jsonSchema,
-    formContext,
-  }) as Field<P>
-
-  return field
+  return createField({ id: Symbol(), jsonSchema, context }) as Field<P>
 }

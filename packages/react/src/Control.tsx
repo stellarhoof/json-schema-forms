@@ -12,7 +12,7 @@ export default forwardRef(
       <Component
         ref={ref}
         field={field}
-        name={field.children ? undefined : field.path.join(".")}
+        name={field.name}
         {...field.controlProps}
         {...props}
       />

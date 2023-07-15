@@ -61,7 +61,7 @@ export const validate = <P extends object>(
   const grouped = _.groupBy(getErrorPath, errors)
 
   formTree.forEach((child) => {
-    const path = child.path.slice(field.path.length)
+    const path = child.name.split(".").slice(field.name.split(".").length)
     const error = (grouped[path.join(".")] ?? [])
       .map(getErrorMessage)
       .join("\n")
