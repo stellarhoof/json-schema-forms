@@ -19,29 +19,26 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Test
-        run: ./scripts/test.sh
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "yarn"
 
-      # - name: Setup node
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 20
-      #     cache: "yarn"
-      #
-      # - name: Install dependencies
-      #   run: yarn install --immutable
-      #
-      # - name: Setup npm auth token
-      #   run: |
-      #     echo -e "npmRegistryServer: \"https://registry.npmjs.org/\"\nnpmAuthToken: \"$NPM_TOKEN\"" >> ./.yarnrc.yml
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #
-      # - name: Release or Create Release PR
-      #   uses: changesets/action@v1
-      #   with:
-      #     version: yarn version
-      #     publish: yarn publish
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Setup npm auth token
+        run: |
+          echo -e "npmRegistryServer: \"https://registry.npmjs.org/\"\nnpmAuthToken: \"$NPM_TOKEN\"" >> ./.yarnrc.yml
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Release or Create Release PR
+        uses: changesets/action@v1
+        with:
+          version: yarn version
+          publish: yarn publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
