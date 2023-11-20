@@ -73,6 +73,7 @@ exports[`forEach > post childrenTree 1`] = `
   {
     "context": {
       "depth": 0,
+      "path": [],
     },
     "node": {
       "children": [
@@ -233,6 +234,7 @@ exports[`forEach > post simpleTree 1`] = `
   {
     "context": {
       "depth": 0,
+      "path": [],
     },
     "node": {
       "name": "The Empire Strikes Back",
@@ -252,6 +254,7 @@ exports[`forEach > pre childrenTree 1`] = `
   {
     "context": {
       "depth": 0,
+      "path": [],
     },
     "node": {
       "children": [
@@ -343,6 +346,7 @@ exports[`forEach > pre simpleTree 1`] = `
   {
     "context": {
       "depth": 0,
+      "path": [],
     },
     "node": {
       "name": "The Empire Strikes Back",
@@ -629,6 +633,7 @@ exports[`reduce > post childrenTree 1`] = `
   {
     "ctx": {
       "depth": 0,
+      "path": [],
     },
     "node": {
       "children": [
@@ -789,6 +794,7 @@ exports[`reduce > post simpleTree 1`] = `
   {
     "ctx": {
       "depth": 0,
+      "path": [],
     },
     "node": {
       "name": "The Empire Strikes Back",
@@ -808,6 +814,7 @@ exports[`reduce > pre childrenTree 1`] = `
   {
     "ctx": {
       "depth": 0,
+      "path": [],
     },
     "node": {
       "children": [
@@ -899,6 +906,7 @@ exports[`reduce > pre simpleTree 1`] = `
   {
     "ctx": {
       "depth": 0,
+      "path": [],
     },
     "node": {
       "name": "The Empire Strikes Back",

@@ -31,7 +31,7 @@ describe("createForm()", () => {
             field.setBy = "onCreateField(field)"
           },
         }),
-        jsonSchema
+        jsonSchema,
       )
 
       const config: FormConfig<P> = {
@@ -42,13 +42,13 @@ describe("createForm()", () => {
       }
 
       let field = createForm(formSchema, config)
-      expect(field.setBy).toEqual("onCreateField")
+      expect(field.setBy).toEqual("onCreateField(field)")
 
       field = (field.children as Record<string, any>).colors
-      expect(field.setBy).toEqual("onCreateField")
+      expect(field.setBy).toEqual("onCreateField(field)")
 
       field = (field.children as any[])[0]
-      expect(field.setBy).toEqual("onCreateField")
+      expect(field.setBy).toEqual("onCreateField(field)")
     })
 
     it("should call cleanup functions returned by onCreateField", () => {
@@ -61,7 +61,7 @@ describe("createForm()", () => {
             paths.push(field.name)
           },
         }),
-        jsonSchema
+        jsonSchema,
       )
 
       createForm(formSchema, { defaultValue: { colors: ["red"] } }).dispose()

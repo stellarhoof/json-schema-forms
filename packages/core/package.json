@@ -25,7 +25,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "expect-type": "^0.16.0",
-    "mobx": "^6.7.0"
+    "expect-type": "^0.17.3",
+    "mobx": "^6.11.0"
   }
 }
