@@ -25,6 +25,7 @@
     "concurrently": "^8.2.2",
     "eslint": "^8.54.0",
     "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "glob": "^10.3.10",
     "jsdom": "^22.1.0",
     "minimist": "^1.2.8",
