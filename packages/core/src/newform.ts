@@ -5,82 +5,86 @@ import { Assign } from "utility-types"
 // TODO: Util to get value for all controls under field. A tree reduce on
 // [name, value] pairs for controls. Pay special attention to array fields.
 // Should we make `name` a getter?
+// Q: How do value/defaultValue get assigned?
 
-const assign = <L extends object, R extends object>(left: L, right: R) => {
+const assignProperties = <L extends object, R extends object>(
+  left: L,
+  right: R,
+) => {
   Object.defineProperties(left, Object.getOwnPropertyDescriptors(right))
   return left as Assign<L, R>
 }
 
-const isControl = (
-  x: any
-): x is typeof x extends Schema ? ControlSchema : ControlField =>
+const isControlSchema = (
+  x: any,
+): x is typeof x extends UISchema ? UIControlSchema : ControlField =>
   "name" in x && x.name !== undefined
 
-const isLayout = (
-  x: any
-): x is typeof x extends Schema ? LayoutSchema : LayoutField =>
+const isLayoutSchema = (
+  x: any,
+): x is typeof x extends UISchema ? UILayoutSchema : LayoutField =>
   "children" in x && x.children !== undefined
 
-const isArray = (
-  x: any
-): x is typeof x extends Schema ? ArraySchema : ArrayField =>
+const isArraySchema = (
+  x: any,
+): x is typeof x extends UISchema ? UIArraySchema : ArrayField =>
   "name" in x && x.name !== undefined && "items" in x && x.items !== undefined
 
 const hasFieldset = (
-  x: any
-): x is typeof x extends Schema ? LayoutSchema : LayoutField =>
+  x: any,
+): x is typeof x extends UISchema ? UILayoutSchema : LayoutField =>
   "fieldset" in x && x.fieldset !== undefined
 
 const someDisabled = (fields: Field[]) =>
   fields.some(
     (x) =>
       ("disabled" in x && x.disabled) ||
-      ("fieldset" in x && x.fieldset!.disabled)
+      ("fieldset" in x && x.fieldset!.disabled),
   )
 
-const uitree = new Tree<any>({
-  getChildren(schema) {
-    return schema.children
+const uiTree = new Tree<any>({
+  getChildren(uiSchema) {
+    return uiSchema.children
   },
-  setChildren(schema, children) {
-    schema.children = children
-    return schema
+  setChildren(uiSchema, children) {
+    uiSchema.children = children
+    return uiSchema
   },
 })
 
-const $state = Symbol("field-state")
+export const $state = Symbol("field-state")
 
 type Props = Record<string, any>
 
 type Component = string | (() => void)
 
-export interface LayoutSchema {
-  children: Schema[]
-  as?: Component
+export interface UILayoutSchema {
+  children: UISchema[]
+  component?: Component
   props?: Props
   fieldset?: {
-    as?: Component
+    component?: Component
     props?: Props
     hidden?: boolean
     disabled?: boolean
   }
 }
 
-export interface ArraySchema extends Omit<LayoutSchema, "children"> {
+export interface UIArraySchema extends Omit<UILayoutSchema, "children"> {
   name: string
-  items: Schema
+  items: UISchema
 }
 
-export interface ControlSchema {
+export interface UIControlSchema {
   name: string
-  as?: Component
+  component?: Component
   props?: Props
   hidden?: boolean
   disabled?: boolean
   required?: boolean
 }
 
-type Schema = LayoutSchema | ArraySchema | ControlSchema
+export type UISchema = UILayoutSchema | UIArraySchema | UIControlSchema
 
 interface ValidationProps {
   willValidate: boolean
@@ -91,7 +95,7 @@ interface ValidationProps {
 
 const createValidationProps = (): ValidationProps => ({
   get validationMessage() {
-    return (this as any)[$state].validationMessage
+    return (this as any)[$state].validationMessage ?? ""
   },
   get willValidate() {
     return !(this as any)[$state].disabled && !(this as any).hidden
@@ -106,14 +110,14 @@ const createValidationProps = (): ValidationProps => ({
 })
 
 export interface FieldsetProps extends ValidationProps {
-  as?: Component
+  component?: Component
   props?: Props
   hidden: boolean
   disabled: boolean
 }
 
 export interface LayoutField {
-  as?: Component
+  component?: Component
   props?: Props
   parents: Field[]
   children: Field[]
@@ -121,21 +125,21 @@ export interface LayoutField {
 }
 
 const createLayoutField = (
-  schema: LayoutSchema,
-  ctx: TraversalContext<Field>
+  uiSchema: UILayoutSchema,
+  ctx: TraversalContext<Field>,
 ): LayoutField => {
   const field = {
-    as: schema.as,
-    props: schema.props,
+    component: uiSchema.component,
+    props: uiSchema.props,
     parents: ctx.parents ?? [],
     children: [],
   } as LayoutField
-  if (hasFieldset(schema)) {
-    field.fieldset = assign(
+  if (hasFieldset(uiSchema)) {
+    field.fieldset = assignProperties(
       {
-        as: schema.as,
-        props: schema.props,
-        hidden: schema.fieldset!.hidden ?? false,
+        component: uiSchema.component,
+        props: uiSchema.props,
+        hidden: uiSchema.fieldset!.hidden ?? false,
         get disabled() {
           return this[$state].disabled || someDisabled(this[$state].parents)
         },
@@ -144,10 +148,10 @@ const createLayoutField = (
         },
         [$state]: {
           parents: ctx.parents ?? [],
-          disabled: schema.fieldset!.disabled ?? false,
+          disabled: uiSchema.fieldset!.disabled ?? false,
         } as any,
       },
-      createValidationProps()
+      createValidationProps(),
     )
   }
   return field
@@ -155,20 +159,20 @@ const createLayoutField = (
 
 export interface ArrayField extends LayoutField {
   name: string
-  items: Schema
+  items: UISchema
 }
 
 const createArrayField = (
-  { items, name, fieldset = {}, ...schema }: ArraySchema,
-  ctx: TraversalContext<Field>
+  { items, name, fieldset = {}, ...uiSchema }: UIArraySchema,
+  ctx: TraversalContext<Field>,
 ): ArrayField =>
-  assign(createLayoutField({ ...schema, fieldset, children: [] }, ctx), {
-    name,
-    items,
-  })
+  assignProperties(
+    createLayoutField({ ...uiSchema, fieldset, children: [] }, ctx),
+    { name, items },
+  )
 
 export interface ControlField extends ValidationProps {
-  as?: Component
+  component?: Component
   props?: Props
   parents: Field[]
   name: string
@@ -180,16 +184,16 @@ export interface ControlField extends ValidationProps {
 }
 
 const createControlField = (
-  schema: ControlSchema,
-  ctx: TraversalContext<Field>
+  uiSchema: UIControlSchema,
+  ctx: TraversalContext<Field>,
 ): ControlField =>
-  assign(
+  assignProperties(
     {
-      as: schema.as,
-      props: schema.props,
+      component: uiSchema.component,
+      props: uiSchema.props,
       parents: ctx.parents ?? [],
-      hidden: schema.hidden ?? false,
-      required: schema.required ?? false,
+      hidden: uiSchema.hidden ?? false,
+      required: uiSchema.required ?? false,
       defaultValue: "",
       value: "",
       get disabled() {
@@ -210,34 +214,34 @@ const createControlField = (
         return this[$state].name
       },
       [$state]: {
-        name: schema.name,
-        disabled: schema.disabled ?? false,
+        name: uiSchema.name,
+        disabled: uiSchema.disabled ?? false,
       } as any,
     },
-    createValidationProps()
+    createValidationProps(),
   )
 
 export type Field = LayoutField | ArrayField | ControlField
 
-export const createField = (schema: Schema) =>
+export const createField = (uiSchema: UISchema) =>
   createMutable(
-    uitree.map<Schema, Field>((schema, ctx) => {
-      if (isControl(schema)) {
-        return createControlField(schema, ctx)
+    uiTree.map<UISchema, Field>((uiSchema, ctx) => {
+      if (isArraySchema(uiSchema)) {
+        return createArrayField(uiSchema, ctx)
       }
-      if (isLayout(schema)) {
-        return createLayoutField(schema, ctx)
+      if (isLayoutSchema(uiSchema)) {
+        return createLayoutField(uiSchema, ctx)
       }
-      if (isArray(schema)) {
-        return createArrayField(schema, ctx)
+      if (isControlSchema(uiSchema)) {
+        return createControlField(uiSchema, ctx)
       }
       throw new Error(
-        'Invalid schema: "name", "children", or "items" is required'
+        'Invalid UI schema: "name", "children", or "items" is required',
       )
-    }, schema)
+    }, uiSchema),
   )
 
 export const setControlsValues = (field: Field, value: any) =>
-  uitree.forEach((field) => {
+  uiTree.forEach((field) => {
     console.log(field, value)
   }, field)
