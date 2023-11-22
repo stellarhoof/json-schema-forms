@@ -12,8 +12,8 @@
     "build": "tsc -b",
     "build:watch": "tsc-watch -b --noClear",
     "version": "yarn changeset version && yarn install --mode=update-lockfile",
-    "publish": "yarn workspaces foreach --parallel --no-private npm publish --access=public --tolerate-republish",
-    "publish:yalc": "yarn workspaces foreach --parallel --no-private exec yalc publish --push --changed --no-workspace-resolve",
+    "publish": "yarn workspaces foreach --all --parallel --no-private npm publish --access=public --tolerate-republish",
+    "publish:yalc": "yarn workspaces foreach --all --parallel --no-private exec yalc publish --push --changed --no-workspace-resolve",
     "publish:yalc:watch": "yarn build:watch --onCompilationComplete 'yarn publish:yalc'"
   },
   "devDependencies": {
