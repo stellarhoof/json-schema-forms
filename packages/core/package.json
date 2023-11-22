@@ -22,10 +22,10 @@
   "dependencies": {
     "@json-schema-forms/json-schema-utils": "workspace:^",
     "@json-schema-forms/tree-utils": "workspace:^",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "solid-js": "^1.7.8"
   },
   "devDependencies": {
-    "expect-type": "^0.17.3",
-    "mobx": "^6.11.0"
+    "expect-type": "^0.17.3"
   }
 }
