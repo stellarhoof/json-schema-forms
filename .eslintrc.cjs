@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-  plugins: ["@typescript-eslint"],
+  plugins: ["simple-import-sort", "@typescript-eslint"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
