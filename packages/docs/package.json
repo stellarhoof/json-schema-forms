@@ -8,15 +8,15 @@
     "url": "git+https://github.com/stellarhoof/json-schema-forms.git"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.13.0",
+    "@astrojs/starlight": "^0.17.0",
     "@fontsource-variable/lora": "^5.0.9",
     "@fontsource/ibm-plex-mono": "^5.0.8",
-    "astro": "^3.5.5",
-    "astro-expressive-code": "^0.29.0",
-    "sharp": "^0.32.6"
+    "astro": "^4.2.6",
+    "astro-expressive-code": "^0.32.2",
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "find-package-json": "^1.2.0",
-    "prettier-plugin-astro": "^0.12.2"
+    "prettier-plugin-astro": "^0.13.0"
   }
 }

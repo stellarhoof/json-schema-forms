@@ -17,26 +17,26 @@
     "publish:yalc:watch": "yarn build:watch --onCompilationComplete 'yarn publish:yalc'"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.2",
-    "@types/lodash": "^4.14.201",
-    "@typescript-eslint/eslint-plugin": "^6.12.0",
-    "@typescript-eslint/parser": "^6.12.0",
-    "@vitest/browser": "^0.34.6",
+    "@changesets/cli": "^2.27.1",
+    "@types/lodash": "^4.14.202",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "@vitest/browser": "^1.2.2",
     "concurrently": "^8.2.2",
     "eslint": "^8.54.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "glob": "^10.3.10",
-    "jsdom": "^22.1.0",
+    "jsdom": "^24.0.0",
     "minimist": "^1.2.8",
-    "mobx": "^6.11.0",
-    "prettier": "^3.1.0",
+    "mobx": "^6.12.0",
+    "prettier": "^3.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsc-watch": "^6.0.4",
-    "typescript": "^5.3.2",
-    "utility-types": "^3.10.0",
-    "vitest": "^0.34.6",
-    "webdriverio": "^8.23.3"
+    "typescript": "^5.3.3",
+    "utility-types": "^3.11.0",
+    "vitest": "^1.2.2",
+    "webdriverio": "^8.29.1"
   }
 }
