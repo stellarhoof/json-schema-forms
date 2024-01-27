@@ -1,5 +1,6 @@
-import { describe, it, expect } from "vitest"
-import { createField, $state, UISchema } from "./newform.js"
+import { describe, expect, it } from "vitest"
+
+import { createField, UISchema } from "./newform.js"
 
 describe("createField()", () => {
   it("should throw on invalid schema", () => {
@@ -11,8 +12,6 @@ describe("createField()", () => {
       name: "age",
     }
     expect(createField(uiSchema)).toEqual({
-      component: undefined,
-      props: undefined,
       parents: [],
       hidden: false,
       required: false,
@@ -24,7 +23,7 @@ describe("createField()", () => {
       validationMessage: "",
       checkValidity: expect.any(Function),
       setCustomValidity: expect.any(Function),
-      [$state]: {
+      $state: {
         name: "age",
         disabled: false,
       },
@@ -34,15 +33,11 @@ describe("createField()", () => {
   it("should create ControlField", () => {
     const uiSchema: UISchema = {
       name: "age",
-      component: "NumberInput",
-      props: { min: 5 },
       hidden: true,
       disabled: true,
       required: true,
     }
     expect(createField(uiSchema)).toEqual({
-      component: "NumberInput",
-      props: { min: 5 },
       parents: [],
       hidden: true,
       required: true,
@@ -54,7 +49,7 @@ describe("createField()", () => {
       validationMessage: "",
       checkValidity: expect.any(Function),
       setCustomValidity: expect.any(Function),
-      [$state]: {
+      $state: {
         name: "age",
         disabled: true,
       },
@@ -66,8 +61,6 @@ describe("createField()", () => {
       children: [],
     }
     expect(createField(schema)).toEqual({
-      component: undefined,
-      props: undefined,
       parents: [],
       children: [],
     })
@@ -79,20 +72,16 @@ describe("createField()", () => {
       fieldset: {},
     }
     expect(createField(schema)).toEqual({
-      component: undefined,
-      props: undefined,
       parents: [],
       children: [],
       fieldset: {
-        component: undefined,
-        props: undefined,
         hidden: false,
         disabled: false,
         willValidate: true,
         validationMessage: "",
         checkValidity: expect.any(Function),
         setCustomValidity: expect.any(Function),
-        [$state]: {
+        $state: {
           parents: [],
           disabled: false,
         },
@@ -106,22 +95,18 @@ describe("createField()", () => {
       items: { name: "age" },
     }
     expect(createField(schema)).toEqual({
-      component: undefined,
-      props: undefined,
       parents: [],
       name: "people",
       items: { name: "age" },
       children: [],
       fieldset: {
-        component: undefined,
-        props: undefined,
         hidden: false,
         disabled: false,
         willValidate: true,
         validationMessage: "",
         checkValidity: expect.any(Function),
         setCustomValidity: expect.any(Function),
-        [$state]: {
+        $state: {
           parents: [],
           disabled: false,
         },
@@ -134,14 +119,10 @@ describe("createField()", () => {
       children: [{ name: "age" }],
     }
     const field = {
-      component: undefined,
-      props: undefined,
       parents: [],
       children: [] as any[],
     }
     field.children.push({
-      component: undefined,
-      props: undefined,
       hidden: false,
       disabled: false,
       required: false,
@@ -153,7 +134,7 @@ describe("createField()", () => {
       checkValidity: expect.any(Function),
       setCustomValidity: expect.any(Function),
       name: "age",
-      [$state]: {
+      $state: {
         name: "age",
         disabled: false,
       },

@@ -1,14 +1,15 @@
+import {
+  getChildrenSchemasFromValue,
+  JsonSchema,
+} from "@json-schema-forms/json-schema-utils"
+import { Collection, Tree } from "@json-schema-forms/tree-utils"
 import _ from "lodash/fp.js"
 import get from "lodash/get.js"
 import set from "lodash/set.js"
 import { Required } from "utility-types"
-import { Collection, Tree } from "@json-schema-forms/tree-utils"
-import {
-  JsonSchema,
-  getChildrenSchemasFromValue,
-} from "@json-schema-forms/json-schema-utils"
-import { formTree } from "./util.js"
+
 import { FieldId, FormConfig } from "./createForm.js"
+import { formTree } from "./util.js"
 
 export type Field<P extends object = object> = P & {
   /**
@@ -181,7 +182,7 @@ export const createField = <P extends object>({
 }: CreateFieldProps<P>) => {
   const field = new Tree<any>({
     getChildren: getChildrenSchemasFromValue(
-      key ? context.fieldMap.get(parentId!)!.value[key] : context.store.value
+      key ? context.fieldMap.get(parentId!)!.value[key] : context.store.value,
     ),
     setChildren: (field, children) => {
       field.children = children
@@ -207,7 +208,7 @@ export const createField = <P extends object>({
         context.onCreateField(store)
       },
     },
-    field as Field<P>
+    field as Field<P>,
   )
 
   return context.fieldMap.get(field.id)!
@@ -234,7 +235,7 @@ const _createField = <P extends object>({
     get children() {
       const self = getSelf()
       const children = (self.__state__.childrenIds as FieldId[])?.map(
-        (id) => context.fieldMap.get(id)!
+        (id) => context.fieldMap.get(id)!,
       )
       if (self.schema.type === "array") {
         return children
@@ -249,7 +250,7 @@ const _createField = <P extends object>({
           (field) => {
             context.fieldMap.set(field.id, field)
             return field.id
-          }
+          },
         )
       }
     },
@@ -372,7 +373,7 @@ const _createField = <P extends object>({
     dispose() {
       formTree.forEach(
         { post: (field) => field.__state__.dispose?.() },
-        getSelf()
+        getSelf(),
       )
     },
 

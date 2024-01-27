@@ -1,7 +1,7 @@
-import { ForwardedRef, forwardRef } from "react"
-import { observer } from "mobx-react-lite"
 import { Grid, GridProps } from "@chakra-ui/react"
 import { Field, ReactField } from "@json-schema-forms/react"
+import { observer } from "mobx-react-lite"
+import { ForwardedRef, forwardRef } from "react"
 
 type Props<P extends object> = { field: ReactField<P> } & GridProps
 

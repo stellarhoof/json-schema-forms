@@ -1,7 +1,8 @@
-import { it, describe, expect } from "vitest"
-import { isPlainObject } from "./util.js"
-import { Tree, propLens } from "./index.js"
+import { describe, expect,it } from "vitest"
+
+import { propLens,Tree } from "./index.js"
 import { TraversalContext } from "./tree.js"
+import { isPlainObject } from "./util.js"
 
 type Json = string | number | boolean | null | Json[] | { [key: string]: Json }
 

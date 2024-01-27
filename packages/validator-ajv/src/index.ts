@@ -1,7 +1,7 @@
-import _ from "lodash/fp.js"
-import ajvModule, { ErrorObject } from "ajv"
-import { Tree } from "@json-schema-forms/tree-utils"
 import { Field, formTree } from "@json-schema-forms/core"
+import { Tree } from "@json-schema-forms/tree-utils"
+import ajvModule, { ErrorObject } from "ajv"
+import _ from "lodash/fp.js"
 
 const Ajv = ajvModule.default
 
@@ -48,7 +48,7 @@ export const validate = <P extends object>(
   options?: {
     ajv?: typeof defaultAjv
     errors?: ErrorObject[] | null
-  }
+  },
 ): boolean => {
   let errors = options?.errors
   const ajv = options?.ajv ?? defaultAjv

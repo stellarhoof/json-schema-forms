@@ -1,10 +1,11 @@
-import { ForwardedRef, forwardRef } from "react"
+import { ReactField } from "@json-schema-forms/react"
 import { observer } from "mobx-react-lite"
+import { ForwardedRef, forwardRef } from "react"
+
 import {
   OptionsRadioGroup,
   Props as OptionsRadioGroupProps,
 } from "./shared/OptionsRadioGroup.js"
-import { ReactField } from "@json-schema-forms/react"
 
 type Props<P extends object> = { field: ReactField<P> } & OptionsRadioGroupProps
 

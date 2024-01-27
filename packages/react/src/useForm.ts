@@ -1,13 +1,13 @@
 import {
-  useState,
-  useRef,
-  useLayoutEffect,
-  useCallback,
   FormEvent,
+  useCallback,
+  useLayoutEffect,
+  useRef,
+  useState,
 } from "react"
 
-export default (
-  submitFn?: (e: FormEvent<HTMLFormElement>) => void | Promise<void>
+export const useForm = (
+  submitFn?: (e: FormEvent<HTMLFormElement>) => void | Promise<void>,
 ) => {
   const ref = useRef<HTMLFormElement>(null)
 
@@ -22,7 +22,7 @@ export default (
         setIsSubmitting(false)
       }
     },
-    [submitFn]
+    [submitFn],
   )
 
   const onInvalid = useCallback((e: FormEvent<HTMLElement>) => {

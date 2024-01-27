@@ -1,11 +1,12 @@
-import startCase from "lodash/fp/startCase.js"
-import { useState } from "react"
-import { observable, reaction } from "mobx"
 import { Center, chakra } from "@chakra-ui/react"
-import { ErrorObject } from "ajv"
+import { createForm,FormSchema } from "@json-schema-forms/core"
+import { Field, ReactFieldProps,useForm } from "@json-schema-forms/react"
 import { validate } from "@json-schema-forms/validator-ajv"
-import { FormSchema, createForm } from "@json-schema-forms/core"
-import { useForm, Field, ReactFieldProps } from "@json-schema-forms/react"
+import { ErrorObject } from "ajv"
+import startCase from "lodash/fp/startCase.js"
+import { observable, reaction } from "mobx"
+import { useState } from "react"
+
 import Submit from "./Submit.js"
 
 const meta = {

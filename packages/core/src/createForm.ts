@@ -1,10 +1,11 @@
-import _ from "lodash/fp.js"
 import {
-  JsonSchema,
   getSchemaValue,
+  JsonSchema,
   jsonSchemaTree,
 } from "@json-schema-forms/json-schema-utils"
-import { Field, Context, createField } from "./createField.js"
+import _ from "lodash/fp.js"
+
+import { Context, createField, Field } from "./createField.js"
 import { accumulate } from "./util.js"
 
 export interface FormConfig<P extends object = object> {
@@ -21,19 +22,19 @@ export type FieldId = symbol
 
 export const createForm = <P extends object = object>(
   formSchema: FormSchema<P>,
-  config: FormConfig<P> = {}
+  config: FormConfig<P> = {},
 ): Field<P> => {
   // Discard `onCreateField` from the schema
   const jsonSchema = jsonSchemaTree.map(
     _.omit("onCreateField"),
-    formSchema
+    formSchema,
   ) as JsonSchema
 
   // Extract `onCreateField` from the schema into a flat object
   const onCreateFieldByPath = jsonSchemaTree.reduce(
     accumulate((schema) => schema.onCreateField),
     {} as Record<string, (field: Field) => (() => void) | void>,
-    formSchema
+    formSchema,
   )
 
   const createStore = config.createStore ?? _.identity

@@ -1,6 +1,7 @@
-import type { Assign } from "utility-types"
-import { forwardRef } from "react"
 import { Radio, RadioGroup, RadioGroupProps } from "@chakra-ui/react"
+import { forwardRef } from "react"
+import type { Assign } from "utility-types"
+
 import { normalizeOptions } from "./normalizeOptions.js"
 
 export type Props = Assign<

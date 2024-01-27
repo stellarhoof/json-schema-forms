@@ -1,7 +1,8 @@
-import { StoryObj } from "@storybook/react"
 import { createForm } from "@json-schema-forms/core"
-import layouts from "./layouts.js"
+import { StoryObj } from "@storybook/react"
 import { observable } from "mobx"
+
+import layouts from "./layouts.js"
 
 /**
  * ```javascript

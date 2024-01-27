@@ -1,6 +1,7 @@
-import { observable } from "mobx"
-import { Meta, StoryObj } from "@storybook/react"
 import { createForm } from "@json-schema-forms/core"
+import { Meta, StoryObj } from "@storybook/react"
+import { observable } from "mobx"
+
 import controls from "./controls.js"
 
 /**

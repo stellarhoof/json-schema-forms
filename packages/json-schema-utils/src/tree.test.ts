@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 
-import { describe, it, expect } from "vitest"
+import { describe, expect,it } from "vitest"
+
 import { jsonSchemaTree } from "./tree.js"
 
 describe("jsonSchemaTree()", () => {

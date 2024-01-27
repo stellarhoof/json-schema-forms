@@ -1,10 +1,10 @@
-import { Omit } from "utility-types"
-import { action } from "mobx"
-import { observer } from "mobx-react-lite"
-import { Icon, Button, ButtonProps } from "@chakra-ui/react"
-import { MdDelete } from "react-icons/md/index.js"
+import { Button, ButtonProps,Icon } from "@chakra-ui/react"
 import { canRemoveChild, removeChild } from "@json-schema-forms/core"
 import { ReactField } from "@json-schema-forms/react"
+import { action } from "mobx"
+import { observer } from "mobx-react-lite"
+import { MdDelete } from "react-icons/md/index.js"
+import { Omit } from "utility-types"
 
 export default observer(
   <P extends object>({

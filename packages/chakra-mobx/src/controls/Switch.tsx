@@ -1,7 +1,7 @@
-import { ForwardedRef, forwardRef } from "react"
-import { observer } from "mobx-react-lite"
-import { SwitchProps, Switch } from "@chakra-ui/react"
+import { Switch,SwitchProps } from "@chakra-ui/react"
 import { ReactField } from "@json-schema-forms/react"
+import { observer } from "mobx-react-lite"
+import { ForwardedRef, forwardRef } from "react"
 
 type Props<P extends object> = { field: ReactField<P> } & SwitchProps
 

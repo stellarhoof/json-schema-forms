@@ -1,5 +1,5 @@
-import mapValues from "lodash/fp/mapValues.js"
 import { createMultiStyleConfigHelpers } from "@chakra-ui/react"
+import mapValues from "lodash/fp/mapValues.js"
 
 const components = {
   Checkbox: {

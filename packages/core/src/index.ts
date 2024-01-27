@@ -1,4 +1,3 @@
-export type * from "./createForm.js"
-export type { Field } from "./createField.js"
-export { createForm } from "./createForm.js"
+export type * from "./newform.js"
+export * from "./newform.js"
 export * from "./util.js"

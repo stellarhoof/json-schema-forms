@@ -1,7 +1,7 @@
-import { ForwardedRef, forwardRef } from "react"
-import { observer } from "mobx-react-lite"
-import { CheckboxProps, Checkbox } from "@chakra-ui/react"
+import { Checkbox,CheckboxProps } from "@chakra-ui/react"
 import { ReactField } from "@json-schema-forms/react"
+import { observer } from "mobx-react-lite"
+import { ForwardedRef, forwardRef } from "react"
 
 type Props<P extends object> = { field: ReactField<P> } & CheckboxProps
 

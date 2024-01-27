@@ -1,9 +1,10 @@
 import { FormComponentsContextType } from "@json-schema-forms/react"
-import NotFound from "./NotFound.js"
-import Default from "./layouts/Default.js"
-import Form from "./layouts/Form.js"
-import Fieldset from "./layouts/Fieldset.js"
+
 import Checkbox from "./layouts/Checkbox.js"
+import Default from "./layouts/Default.js"
+import Fieldset from "./layouts/Fieldset.js"
+import Form from "./layouts/Form.js"
+import NotFound from "./NotFound.js"
 
 export default {
   "type.string": Default,

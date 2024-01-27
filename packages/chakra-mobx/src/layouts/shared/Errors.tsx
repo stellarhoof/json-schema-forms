@@ -1,12 +1,12 @@
-import upperFirst from "lodash/upperFirst.js"
-import { observer } from "mobx-react-lite"
 import {
   Box,
   BoxProps,
-  FormErrorMessage,
   FormErrorIcon,
+  FormErrorMessage,
 } from "@chakra-ui/react"
 import { ReactField } from "@json-schema-forms/react"
+import upperFirst from "lodash/upperFirst.js"
+import { observer } from "mobx-react-lite"
 
 type Props<P extends object> = { field: ReactField<P> } & BoxProps
 

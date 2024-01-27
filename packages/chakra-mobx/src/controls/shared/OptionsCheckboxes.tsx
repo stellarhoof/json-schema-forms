@@ -1,5 +1,6 @@
-import type { Assign } from "utility-types"
 import { Checkbox, CheckboxGroup, CheckboxGroupProps } from "@chakra-ui/react"
+import type { Assign } from "utility-types"
+
 import { normalizeOptions } from "./normalizeOptions.js"
 
 type Props = Assign<CheckboxGroupProps, Parameters<typeof normalizeOptions>[0]>

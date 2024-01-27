@@ -1,10 +1,11 @@
-import { ForwardedRef, forwardRef } from "react"
 import { FormControlProps, useMultiStyleConfig } from "@chakra-ui/react"
 import { Control, ReactField } from "@json-schema-forms/react"
-import FormControl from "./shared/FormControl.js"
-import Title from "./shared/Title.js"
+import { ForwardedRef, forwardRef } from "react"
+
 import Description from "./shared/Description.js"
 import Errors from "./shared/Errors.js"
+import FormControl from "./shared/FormControl.js"
+import Title from "./shared/Title.js"
 
 type Props<P extends object> = { field: ReactField<P> } & FormControlProps
 

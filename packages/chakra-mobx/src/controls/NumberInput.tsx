@@ -1,15 +1,15 @@
-import { ForwardedRef, forwardRef } from "react"
-import { observer } from "mobx-react-lite"
 import {
-  NumberInputProps,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
   NumberInput,
   NumberInputField,
+  NumberInputProps,
   NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
 } from "@chakra-ui/react"
 import { Field } from "@json-schema-forms/core"
 import { ReactField } from "@json-schema-forms/react"
+import { observer } from "mobx-react-lite"
+import { ForwardedRef, forwardRef } from "react"
 
 export const useNumberSchema = (schema: Field["schema"]) => {
   if (schema.type !== "number" && schema.type !== "integer") {

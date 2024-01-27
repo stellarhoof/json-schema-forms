@@ -1,11 +1,11 @@
-import { ForwardedRef, forwardRef } from "react"
 import {
   Alert,
-  AlertIcon,
   AlertDescription,
+  AlertIcon,
   AlertProps,
 } from "@chakra-ui/react"
 import { ReactField } from "@json-schema-forms/react"
+import { ForwardedRef, forwardRef } from "react"
 
 type Props<P extends object> = { field: ReactField<P> } & AlertProps
 

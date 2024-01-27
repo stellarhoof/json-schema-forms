@@ -1,8 +1,9 @@
+import { Tree } from "@json-schema-forms/tree-utils"
 import _ from "lodash/fp.js"
 import set from "lodash/set.js"
-import { Tree } from "@json-schema-forms/tree-utils"
-import type { JsonSchema } from "./types.js"
+
 import { getChildrenSchemasFromValue, TraversableSchema } from "./tree.js"
+import type { JsonSchema } from "./types.js"
 
 const jsonSchemaType = (value: any) => {
   if (Array.isArray(value)) return "array"

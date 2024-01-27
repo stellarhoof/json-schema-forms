@@ -1,9 +1,9 @@
-import _ from "lodash/fp.js"
 import {
-  Tree,
   Collection,
   TraversalContext,
+  Tree,
 } from "@json-schema-forms/tree-utils"
+import _ from "lodash/fp.js"
 
 export type TraversableSchema = {
   type: string

@@ -1,10 +1,11 @@
 import { FormComponentsContextType } from "@json-schema-forms/react"
+
 import Checkbox from "./controls/Checkbox.js"
 import ChildrenGrid from "./controls/ChildrenGrid.js"
 import Input from "./controls/Input.js"
 import NumberInput from "./controls/NumberInput.js"
-import Select from "./controls/Select.js"
 import RadioGroup from "./controls/RadioGroup.js"
+import Select from "./controls/Select.js"
 import Slider from "./controls/Slider.js"
 import Switch from "./controls/Switch.js"
 import Textarea from "./controls/Textarea.js"

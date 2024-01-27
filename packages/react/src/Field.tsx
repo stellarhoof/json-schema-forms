@@ -1,15 +1,34 @@
-import { ForwardedRef, forwardRef } from "react"
-import useFieldLayout from "./useFieldLayout.js"
-import { ReactField } from "./types.js"
+import * as core from "@json-schema-forms/core"
+import { ForwardedRef, forwardRef, useContext } from "react"
 
-export default forwardRef(
-  <P extends object>(
-    { field, ...props }: { field: ReactField<P> } & Record<string, any>,
-    ref: ForwardedRef<any>
+import { Context, ReactField } from "./Context.jsx"
+
+export const Field = forwardRef(
+  (
+    { field, ...props }: { field: ReactField } & Record<string, any>,
+    ref: ForwardedRef<any>,
   ) => {
-    const Component = useFieldLayout(field)
+    const { notFound, layouts, controls, arrays } = useContext(Context)
+
+    const registry = core.isArrayField(field)
+      ? arrays
+      : core.isLayoutField(field)
+        ? layouts
+        : controls
+
+    const Component =
+      (typeof field.component === "string"
+        ? registry[field.component]
+        : field.component) ?? notFound
+
     return (
-      <Component ref={ref} field={field} {...field.layoutProps} {...props} />
+      <Component
+        ref={ref}
+        field={field as any}
+        name={(field as any).name}
+        {...field.props}
+        {...props}
+      />
     )
-  }
+  },
 )

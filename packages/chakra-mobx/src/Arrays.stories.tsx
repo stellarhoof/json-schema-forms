@@ -1,6 +1,6 @@
-import { observable } from "mobx"
 import { createForm } from "@json-schema-forms/core"
 import { Field, ReactField, ReactFieldProps } from "@json-schema-forms/react"
+import { observable } from "mobx"
 
 const meta = {
   title: "Arrays",

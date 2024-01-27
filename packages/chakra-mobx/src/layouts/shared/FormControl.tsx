@@ -1,6 +1,6 @@
-import { observer } from "mobx-react-lite"
 import { FormControl, FormControlProps } from "@chakra-ui/react"
 import { ReactField } from "@json-schema-forms/react"
+import { observer } from "mobx-react-lite"
 
 type Props<P extends object> = { field: ReactField<P> } & FormControlProps
 

@@ -1,11 +1,12 @@
-import _ from "lodash/fp.js"
+import { getSchemaValue } from "@json-schema-forms/json-schema-utils"
 import {
-  Tree,
   Collection,
   TraversalContext,
+  Tree,
 } from "@json-schema-forms/tree-utils"
-import { getSchemaValue } from "@json-schema-forms/json-schema-utils"
-import { Field, createField } from "./createField.js"
+import _ from "lodash/fp.js"
+
+import { createField,Field } from "./createField.js"
 
 export const formTree = new Tree<{ children?: Collection<unknown> }>({
   getChildren(field) {
@@ -89,7 +90,7 @@ export const canRemoveChild = <P extends object>(field?: Field<P>) => {
  */
 export const removeChild = <P extends object>(
   field: Field<P>,
-  index?: number
+  index?: number,
 ) => {
   if (field.schema.type === "array") {
     index ??= _.size(field.value)

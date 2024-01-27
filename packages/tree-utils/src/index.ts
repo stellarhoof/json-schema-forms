@@ -1,12 +1,12 @@
-import type { ChildrenLens } from "./tree.js"
 import type { Collection } from "./collection.js"
+import type { ChildrenLens } from "./tree.js"
+import { filter, find, forEach,map, reduce } from "./tree.js"
 import { isPlainObject } from "./util.js"
-import { map, filter, reduce, find, forEach } from "./tree.js"
 
-export * from "./util.js"
 export type { Collection } from "./collection.js"
 export type * from "./tree.js"
 export { StopTraversal } from "./tree.js"
+export * from "./util.js"
 
 export class Tree<T> {
   static filter = filter
