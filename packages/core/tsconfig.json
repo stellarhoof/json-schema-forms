@@ -1,18 +1,17 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "include": ["src"],
-  "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "lib": ["esnext", "dom"],
-    "tsBuildInfoFile": "../../node_modules/.buildinfo/core"
-  },
+  "extends": [
+    "../../tsconfig.shared.all.jsonc",
+    "../../tsconfig.shared.lib.jsonc"
+  ],
   "references": [
-    {
-      "path": "../json-schema-utils"
-    },
-    {
-      "path": "../tree-utils"
+    { "path": "../tree-utils/tsconfig.json" },
+    { "path": "../json-schema-utils/tsconfig.json" }
+  ],
+  "compilerOptions": {
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "paths": {
+      "#tree-utils/*": ["../tree-utils/src/*"],
+      "#json-schema-utils/*": ["../json-schema-utils/src/*"]
     }
-  ]
+  }
 }

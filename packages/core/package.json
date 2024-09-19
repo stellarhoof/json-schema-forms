@@ -23,9 +23,9 @@
     "@json-schema-forms/json-schema-utils": "workspace:^",
     "@json-schema-forms/tree-utils": "workspace:^",
     "lodash": "^4.17.21",
-    "solid-js": "^1.8.12"
+    "solid-js": "^1.8.22"
   },
   "devDependencies": {
-    "expect-type": "^0.17.3"
+    "expect-type": "^0.20.0"
   }
 }

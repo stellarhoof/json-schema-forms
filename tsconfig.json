@@ -1,24 +1,14 @@
+// Good reference for project references in a monorepo setting
+// https://moonrepo.dev/docs/guides/javascript/typescript-project-refs
 {
-  "extends": "./tsconfig.base.json",
-  "exclude": ["*"],
+  // Do not doubly build files (they're already being built via references).
+  "files": [],
   "references": [
-    {
-      "path": "packages/tree-utils/tsconfig.build.json"
-    },
-    {
-      "path": "packages/json-schema-utils/tsconfig.build.json"
-    },
-    {
-      "path": "packages/core/tsconfig.build.json"
-    },
-    {
-      "path": "packages/validator-ajv/tsconfig.build.json"
-    },
-    {
-      "path": "packages/react/tsconfig.build.json"
-    },
-    {
-      "path": "packages/chakra-mobx/tsconfig.build.json"
-    }
+    { "path": "./packages/tree-utils/tsconfig.json" },
+    { "path": "./packages/json-schema-utils/tsconfig.json" },
+    { "path": "./packages/core/tsconfig.json" },
+    { "path": "./packages/validator-ajv/tsconfig.json" },
+    { "path": "./packages/react/tsconfig.json" },
+    { "path": "./packages/chakra-mobx/tsconfig.json" }
   ]
 }

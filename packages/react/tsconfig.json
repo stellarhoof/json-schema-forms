@@ -1,16 +1,14 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "include": ["src"],
+  "extends": [
+    "../../tsconfig.shared.all.jsonc",
+    "../../tsconfig.shared.lib.jsonc"
+  ],
+  "references": [{ "path": "../core/tsconfig.json" }],
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
     "lib": ["esnext", "dom", "dom.iterable"],
     "jsx": "react-jsx",
-    "tsBuildInfoFile": "../../node_modules/.buildinfo/react"
-  },
-  "references": [
-    {
-      "path": "../core"
+    "paths": {
+      "#core/*": ["../core/src/*"]
     }
-  ]
+  }
 }

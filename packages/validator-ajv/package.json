@@ -22,7 +22,7 @@
   "dependencies": {
     "@json-schema-forms/core": "workspace:^",
     "@json-schema-forms/tree-utils": "workspace:^",
-    "ajv": "^8.12.0",
+    "ajv": "^8.17.1",
     "lodash": "^4.17.21"
   }
 }

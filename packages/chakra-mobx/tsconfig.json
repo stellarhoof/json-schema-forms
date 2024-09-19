@@ -1,22 +1,20 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "include": ["src"],
-  "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "jsx": "react-jsx",
-    "tsBuildInfoFile": "../../node_modules/.buildinfo/chakra-mobx"
-  },
+  "extends": [
+    "../../tsconfig.shared.all.jsonc",
+    "../../tsconfig.shared.lib.jsonc"
+  ],
   "references": [
-    {
-      "path": "../core"
-    },
-    {
-      "path": "../validator-ajv"
-    },
-    {
-      "path": "../react"
+    { "path": "../core/tsconfig.json" },
+    { "path": "../validator-ajv/tsconfig.json" },
+    { "path": "../react/tsconfig.json" }
+  ],
+  "compilerOptions": {
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "jsx": "react",
+    "paths": {
+      "#core/*": ["../core/src/*"],
+      "#validator-ajv/*": ["../validator-ajv/src/*"],
+      "#react/*": ["../react/src/*"]
     }
-  ]
+  }
 }

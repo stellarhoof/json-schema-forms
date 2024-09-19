@@ -1,6 +1,4 @@
-// @vitest-environment jsdom
-
-import { describe, expect,it } from "vitest"
+import { describe, expect, it } from "vitest"
 
 import { jsonSchemaTree } from "./tree.js"
 
@@ -19,7 +17,7 @@ describe("jsonSchemaTree()", () => {
         return paths
       },
       [] as string[][],
-      schema
+      schema,
     )
 
     expect(paths).toEqual([[], ["*"]])
@@ -36,7 +34,7 @@ describe("jsonSchemaTree()", () => {
     const mapped = jsonSchemaTree.map(
       (schema, ctx) =>
         ctx.key === "*" ? { ...schema, type: "number" } : schema,
-      schema
+      schema,
     )
 
     expect(mapped).toEqual({
