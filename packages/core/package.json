@@ -20,10 +20,9 @@
     "prepack": "yarn run -T tsc -b"
   },
   "dependencies": {
-    "@json-schema-forms/json-schema-utils": "workspace:^",
     "@json-schema-forms/tree-utils": "workspace:^",
     "lodash": "^4.17.21",
-    "solid-js": "^1.8.22"
+    "solid-js": "^1.9.1"
   },
   "devDependencies": {
     "expect-type": "^0.20.0"

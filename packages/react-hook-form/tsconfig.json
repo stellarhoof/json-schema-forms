@@ -6,6 +6,9 @@
   "references": [{ "path": "../tree-utils/tsconfig.json" }],
   "compilerOptions": {
     "lib": ["esnext", "dom", "dom.iterable"],
-    "paths": { "#tree-utils/*": ["../tree-utils/src/*"] }
+    "jsx": "react-jsx",
+    "paths": {
+      "#tree-utils/*": ["../tree-utils/src/*"]
+    }
   }
 }

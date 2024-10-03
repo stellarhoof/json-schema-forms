@@ -3,15 +3,11 @@
     "../../tsconfig.shared.all.jsonc",
     "../../tsconfig.shared.lib.jsonc"
   ],
-  "references": [
-    { "path": "../tree-utils/tsconfig.json" },
-    { "path": "../json-schema-utils/tsconfig.json" }
-  ],
+  "references": [{ "path": "../tree-utils/tsconfig.json" }],
   "compilerOptions": {
     "lib": ["esnext", "dom", "dom.iterable"],
     "paths": {
-      "#tree-utils/*": ["../tree-utils/src/*"],
-      "#json-schema-utils/*": ["../json-schema-utils/src/*"]
+      "#tree-utils/*": ["../tree-utils/src/*"]
     }
   }
 }
